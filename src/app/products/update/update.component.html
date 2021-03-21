@@ -1,0 +1,21 @@
+<h2>HEROES</h2>
+<div *ngIf="product$ | async as product">
+  <h3>"{{ product.name }}"</h3>
+  <div>
+    <label>Id: </label>{{ product.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="product.name" placeholder="name"/>
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="product.description" placeholder="name"/>
+  </div>
+  <div>
+    <label>Price: </label>
+    <input [(ngModel)]="product.price" type="number" placeholder="name"/>
+  </div>
+  <p>
+    <button (click)="updateProduct(product.id, product)">Update</button>
+  </p>
+</div>
